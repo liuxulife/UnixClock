@@ -1,0 +1,48 @@
+{
+  "name": "unixclock",
+  "displayName": "UNIXClock",
+  "description": "It shows the Unix Timestamp in the Status Bar",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.insertTimestamp",
+        "title": "Insert Unix Timestamp"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Extension Configuration",
+      "properties": {
+        "extension.showUnixTimestamp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Unix Timestamp in Status Bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.93.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^9.9.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
